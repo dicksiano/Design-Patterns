@@ -1,23 +1,35 @@
-class AX {
+class X {
     public void methodX() {
 
     }
 }
 
-class AY {
+class Y {
     public void methodY() {
 
     }
 }
 
-class A {
-    private AX _AX; // Or AY
+class Z {
+    public void methodZ() {
+
+    }
+}
+
+class Facade {
+    private X _X; 
+    private Y _Y; 
+    private Z _Z; 
 
     public void methodX() {
-        _AX.methodX();
+        _X.methodX();
     }
 
     public void methodY() {
-        // Adapt to run methodY
+        _Y.methodY();
+    }
+
+    public void methodZ() {
+        _Z.methodZ();
     }
 }
