@@ -1,16 +1,9 @@
-public final class Singleton {
-    private static volatile Singleton _instance;
+public class Singleton {
+    private static Singleton _instance = new Singleton();
 
-    private Singleton() {}
+    private Singleton() {} // Private constructor!
 
     public static Singleton getInstance() {
-        if(_instance == null) {
-            synchronized (Singleton.class) {
-                if (_instance == null) {
-                    _instance = new Singleton();
-                }
-            }
-        }
-        return instance;
+        return _instance;
     }
 }
